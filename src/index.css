@@ -1,3 +1,25 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@layer base {
+  input[type="range"] {
+    background: #000;
+  }
+  input[type="range"]::-webkit-slider-thumb {
+    -webkit-appearance: none; /* Safari and Chrome */
+    appearance: none; /* Standard syntax */
+    width: 25px; /* Width of the thumb */
+    height: 25px; /* Height of the thumb */
+    background: #04aa6d; /* Color of the thumb */
+    cursor: pointer; /* Pointer cursor on hover */
+  }
+
+  /* For Firefox (alternative syntax) */
+  input[type="range"]::-moz-range-thumb {
+    width: 25px;
+    height: 25px;
+    background: #04aa6d;
+    cursor: pointer;
+  }
+}
