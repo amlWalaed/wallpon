@@ -1,7 +1,8 @@
 import defaultTheme from "tailwindcss/defaultTheme";
+import { iconsPlugin, getIconCollections } from "@egoist/tailwindcss-icons";
 /** @type {import('tailwindcss').Config} */
 export default {
-  content: ["./src/**/*.{js,jsx,ts,tsx}"],
+  content: ["./src/**/*.{js,jsx,ts,tsx}", "./**/*.html"],
   theme: {
     container: {
       center: true,
@@ -43,8 +44,30 @@ export default {
           900: "#2d4522",
           950: "#15250e",
         },
+        surface: {
+          50: "#f7f8fc",
+          100: "#e5e7f4",
+          200: "#d0d6ed",
+          300: "#b0bce0",
+          400: "#8a98d0",
+          500: "#6e7ac3",
+          600: "#5b62b5",
+          700: "#5052a5",
+          800: "#464687",
+          900: "#3b3c6d",
+          950: "#282843",
+        },
       },
     },
   },
-  plugins: [],
+  plugins: [
+    iconsPlugin({
+      collections: {
+        app: {
+          icons: {},
+        },
+        ...getIconCollections(["heroicons"]),
+      },
+    }),
+  ],
 };
